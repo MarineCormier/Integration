@@ -1,7 +1,7 @@
 
 @font-face {
 	font-family: "calibre-medium";
-	src: url(../fonts/calibre-medium.woff) format("woff");
+	src: url(assets/fonts/calibre-medium.woff) format("woff");
 }
 
 @font-face {
@@ -202,22 +202,30 @@ p.description {
 	margin-bottom: 10%;
 }
 
-.container_footer {
-	display: block;
+.lajoliediv {
 	background-color: #000;
-	padding-top: 12%;
-	padding-bottom: 12%;
 	margin:0;
-	 transition-property: background-color; /* Active la transition sur background-color */
-    transition-duration: 1s; /* La transition dure 1s */
+	height: 600px;
 }
 
-.container_footer:hover{
-	background:rgb(139, 188, 207);
-
+.container_footer {
+	top:0;
+	left:0;
+	height: 100%;
+	position: absolute;
+	width: 0;
+    background:rgb(139, 188, 207);
+    transtion: all 1s ease-in-out;
+}
+.lajoliediv:hover .container_footer {
+	width: 100%;
+	transition:1s;
 }
 
 .article_suivant {
+	padding-top :200px;
+	z-index: 1000;
+	position:relative;
 	width: 100%;
 	height: auto;
 	color: #fff;
@@ -228,6 +236,7 @@ p.description {
 }
 
 p.prochain_article {
+	z-index: 1000;
 	display: block;
 	position: relative;
 	text-align: center;
@@ -237,8 +246,13 @@ p.prochain_article {
 	letter-spacing: 0.3em;
 	margin: 0;
 }
-
+.lajoliediv .row,
+.lajoliediv .col-lg-12 {
+	height:100%;
+}
 .footer {
+	position: absolute;
+	bottom: 0;
 	display: block;
 	position: relative;
 	width: 100%;
